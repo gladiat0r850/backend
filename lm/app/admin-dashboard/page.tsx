@@ -25,11 +25,11 @@ interface Cars {
   description: string
   features: string[]
   specifications: {
-    engine: string
-    transmission: string
-    drivetrain: string
-    weight: string
-    fuelEconomy: string
+    engine?: string
+    transmission?: string
+    drivetrain?: string
+    weight?: string
+    fuelEconomy?: string
   }
 }
 
