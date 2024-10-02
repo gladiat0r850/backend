@@ -6,9 +6,11 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import emailjs from '@emailjs/browser'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function ContactPage() {
-    const form = useRef<HTMLFormElement>(null); // Initialize ref with null
+    const form = useRef<HTMLFormElement>(null)
     const [formData, setFormData] = useState({
       from_name: '',
       from_email: '',
@@ -60,7 +62,7 @@ export default function ContactPage() {
               from_phone: '',
               message: ''
             })
-            alert('Email sent successfully!');
+            toast.success('Email sent successfully!')
           })
           .catch((error) => {
             setIsSubmitting(false)
@@ -69,7 +71,8 @@ export default function ContactPage() {
       }
     };
 
-  return (
+  return <>
+    <ToastContainer />
     <div className="min-h-screen bg-white mt-12 text-gray-800 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
@@ -113,7 +116,7 @@ export default function ContactPage() {
     <Label htmlFor="from_phone">Phone</Label>
     <Input
       id="user_phone"
-      name="user_phone" // Matches formData.user_phone
+      name="user_phone"
       type="number"
       value={formData.from_phone}
       onChange={handlePhoneNumberAssignment}
@@ -121,14 +124,14 @@ export default function ContactPage() {
     />
   </div>
   <div>
-    <Label htmlFor="message">Message</Label>
+  <Label htmlFor="message">Message</Label>
     <Textarea
       id="message"
-      name="message" // Updated name
-      value={formData.message} // Corresponding value from formData
+      name="message"
+      value={formData.message}
       onChange={handleMessage}
       required
-      className="w-full h-32 resize-none bg-white"
+      className="w-full h-56 resize-none bg-white"
     />
   </div>
               <Button type="submit" className="w-full" disabled={isSubmitting}>
@@ -175,5 +178,5 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
-  )
+  </>
 }

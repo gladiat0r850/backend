@@ -93,7 +93,7 @@ async function ProductGrid() {
           </CardContent>
           <Separator />
           <CardFooter className="p-4">
-            <Link className='w-full' href={`/catalog/${product.id}`}><Button className="w-full">Add to Cart</Button></Link>
+            <Link className='w-full' href={`/catalog/${product.id - 1}`}><Button className="w-full">Add to Cart</Button></Link>
           </CardFooter>
         </Card>
       ))}
