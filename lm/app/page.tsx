@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Separator } from '@/components/ui/separator'
 import { Star, Quote } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { ShoppingCart, ChevronRight, Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { ChevronRight, Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 
 interface Cars {
@@ -79,7 +79,7 @@ async function ProductGrid() {
             <div className="grid grid-cols-3 gap-2 text-sm">
               <div>
                 <p className="font-semibold">Top Speed</p>
-                <p>{product.topSpeed}</p>
+                <p>{product.topSpeed} mph</p>
               </div>
               <div>
                 <p className="font-semibold">Acceleration</p>
